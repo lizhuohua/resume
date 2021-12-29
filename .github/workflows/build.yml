@@ -18,7 +18,6 @@ jobs:
       uses: xu-cheng/latex-action@v2
       with:
         root_file: CV.tex
-        latexmk_use_xelatex: false
 
     - name: Create GitHub release
       uses: marvinpinto/action-automatic-releases@latest
