@@ -31,13 +31,12 @@
 \moderncvcolor{black} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
 
 \usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
-%\usepackage{fontspec}
-\usepackage{fontawesome}
 \usepackage[scale=0.85]{geometry} % Reduce document margins
-%\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
-%\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
-\usepackage{fontspec}
-\usepackage{xunicode}
+% \setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
+% \setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
 \usepackage{xeCJK} % Chinese font setting
 % \setCJKmainfont{Source Han Sans CN}
 % \setCJKsansfont{Source Han Sans CN}
@@ -155,7 +154,7 @@
 	\end{itemize}
 }
 
-\cventry{2016年6月}{导师：安虹\ 教授}{ISC16国际大学生超级计算机竞赛}{德国，法兰克福}{}{
+\cventry{2016年6月}{导师：安虹\ 教授}{ISC16国际大学生超级计算机竞赛}{法兰克福，德国}{}{
 \begin{itemize}
 \item 基于华为\emph{FusionServer X6800}服务器搭建超算集群
 \item 在3千瓦功耗限制下优化应用性能
