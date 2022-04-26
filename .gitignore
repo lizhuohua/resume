@@ -6,3 +6,4 @@ auto
 *.pdf
 *.fls
 *.fdb_latexmk
+*.~undo-tree~
