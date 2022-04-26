@@ -1,3 +1,4 @@
+% !TEX program = xelatex
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % "ModernCV" CV and Cover Letter
 % LaTeX Template
@@ -30,23 +31,35 @@
 \moderncvcolor{black} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
 
 \usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+%\usepackage{fontspec}
+\usepackage{fontawesome}
 \usepackage[scale=0.85]{geometry} % Reduce document margins
 %\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
 %\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{xeCJK} % Chinese font setting
+% \setCJKmainfont{Source Han Sans CN}
+% \setCJKsansfont{Source Han Sans CN}
+
+\setCJKmainfont[
+BoldFont=Heiti SC,
+ItalicFont=KaiTi,
+SmallCapsFont=SimHei
+]{SimSun}
+\setCJKsansfont{KaiTi}
+\setCJKmonofont{SimHei}
 
 %----------------------------------------------------------------------------------------
 %	NAME AND CONTACT INFORMATION SECTION
 %----------------------------------------------------------------------------------------
-\firstname{Zhuohua} % Your first name
-\familyname{Li} % Your last name
+\firstname{李} % Your first name
+\familyname{卓华} % Your last name
 
 % All information in this block is optional, comment out any lines you don't need
-\title{Curriculum Vitae}
+%\title{Curriculum Vitae}
 %\title{Resume}
-\address{The Chinese University of Hong Kong, Shatin, N.T., Hong Kong SAR}{}
+%\address{The Chinese University of Hong Kong, Shatin, N.T., Hong Kong SAR}{}
 \phone[mobile]{(+852)~6587~3796}
 %\phone{(000) 111 1112}
 %\fax{(000) 111 1113}
@@ -54,7 +67,6 @@
 \homepage{zhuohua.me}
 \social[github]{lizhuohua}
 \social[linkedin]{lizhuohua}
-\social[googlescholar]{lizhuohua}
 %\extrainfo{additional information}
 %\photo[70pt][0.4pt]{pictures/picture} % The first bracket is the picture height, the second is the thickness of the frame around the picture (0pt for no frame)
 %\quote{"A witty and playful quotation" - John Smith}
@@ -96,12 +108,12 @@
 %	EDUCATION SECTION
 %----------------------------------------------------------------------------------------
 \vspace*{-10mm}
-\section{EDUCATION}
+\section{教育经历}
 
-\cventry{Aug.2017--Present}{Ph.D. in Computer Science and Engineering}{The Chinese University of Hong Kong}{Hong Kong}{}{ANSR Lab, supervised by Prof. John C.S. Lui}
+\cventry{2017年8月--现在}{博士，计算机科学与工程学系}{香港中文大学}{香港}{}{网络系统研究实验室（ANSR Lab），导师：John C.S. Lui教授}
 %\cventry{Jul.2016--Sep.2016}{Research Intern at Social Computing Group}{Microsoft Research Asia}{Beijing}{}{Mentor: Dr. Xing Xie}  % Arguments not required can be left empty
 %\cventry{Aug.2013--Jun.2017}{B.E. in Computer Science and Technology}{University of Science and Technology of China}{Hefei}{\textit{GPA: 3.73/4.3}}{Hua Xia Talent Program in Computer Science and Technology}
-\cventry{Aug.2013--Jun.2017}{B.E. in Computer Science and Technology}{University of Science and Technology of China}{Hefei}{}{Hua Xia Talent Program in Computer Science and Technology}
+\cventry{2013年8月--2017年6月}{学士，计算机科学与技术系}{中国科学技术大学}{合肥}{}{华夏计算机科技英才班}
 %Thesis Title: Analysis and Mitigation of Ret2art Attack for Android
 %\section{Masters Thesis}
 
@@ -113,42 +125,42 @@
 %	WORK EXPERIENCE SECTION
 %----------------------------------------------------------------------------------------
 
-\section{EXPERIENCE}
+\section{研究经历}
 
 %\subsection{Vocational}
-\cventry{Jul.2019--May.2021}{Supervisor: Prof. John C.S. Lui}{Static Analysis for Rust Programs}{CUHK}{}
+\cventry{2019年7月--2021年5月}{导师：John C.S. Lui\ 教授}{Rust程序的静态分析}{香港中文大学}{}
 {
 	\begin{itemize}
-		\item Developed an automated bug detection tool for Rust based on the theory of \textit{Abstract Interpretation}
-		\item Performed static analysis on the \textit{Mid-level Intermediate Representation (MIR)} of Rust
-		\item Detected several real-world bugs
+    \item 基于\textit{抽象释义}开发了针对Rust语言的静态分析和除错工具
+		\item 分析运行于Rust的\textit{中级中间表示}（\textit{Mid-level Intermediate Representation}）
+		\item 检测到了数个现实中的漏洞
 	\end{itemize}
 }
 
-\cventry{Jul.2018--Oct.2018}{Supervisor: Dr. Tao  (Lenx) Wei}{Secure Linux Kernel Module Development in Rust}{Baidu X-Lab, USA}{}
+\cventry{2018年7月--2018年10月}{导师：韦韬\ 博士}{用Rust开发安全的Linux内核模块}{百度X-Lab，美国}{}
 {
 	\begin{itemize}
-		\item Developed a framework for writing Linux kernel modules in the Rust programming language
-		\item Provided infrastructures for safe kernel memory allocation and concurrency management
+		\item 开发了用Rust编写Linux内核模块的框架
+		\item 提供了安全的内核态内存管理机制和内核锁同步机制
 	\end{itemize}
 }
 
-\cventry{Jul.2016--Sep.2016}{Mentor: Dr. Xing Xie}{Sentiment Analysis of Microsoft's Chatbot XiaoIce}{Microsoft Research Asia, Beijing}{}
+\cventry{2016年7月--2016年9月}{导师：谢幸\ 博士}{微软小冰的情感分析}{微软亚洲研究院，北京}{}
 {
     \begin{itemize}
-    	\item Participated in improving the sentiment recognition of XiaoIce, Microsoft's AI chatbot
+    	\item 参与改进微软小冰聊天机器人的情感分析能力
 %	\item Wrote a crawler with \emph{C$^\#$} to crawl sentences from Weibo, tagged their emotions according to their emoticons, extracted a training set and generate a classifier
-	\item Optimized the emotion recognition according to the context of XiaoIce's dialogues
+	    \item 根据对话的上下文识别当前对话中用户的情感，并作出相应回答
 %	\item Proposed to simplify the classification of sentences by actual application scenarios and improved the precision of emotion recognition for Xiao Ice
 	\end{itemize}
 }
 
-\cventry{Jun.2016}{Advisor: Prof. Hong An}{2016 ISC-HPCAC Student Cluster Competition}{Frankfurt, Germany}{}{
+\cventry{2016年6月}{导师：安虹\ 教授}{ISC16国际大学生超级计算机竞赛}{德国，法兰克福}{}{
 \begin{itemize}
-\item Built an HPC cluster with our team based on \emph{Huawei FusionServer X6800}
-\item Optimized the performance of several benchmarks and applications within 3kW power-dissipation
+\item 基于华为\emph{FusionServer X6800}服务器搭建超算集群
+\item 在3千瓦功耗限制下优化应用性能
 %\item Took charge of optimizing \emph{WRF (Weather Research and Forecasting Model)}
-\item Ranked 4\textsuperscript{th} in overall score and 1\textsuperscript{st} in \emph{WRF (Weather Research and Forecasting Model)}
+\item 获得总分第四名，\emph{WRF (Weather Research and Forecasting Model)}单项第一名
 %\begin{itemize}
 %\item Wrote shell scripts to make the time-consuming compiling and linking done automatically
 %\item Modified the compiling options to be depth optimization of the program
@@ -190,43 +202,43 @@
 
 %\cventry{2009--2010}{Computer Repair Specialist}{Buy More}{Burbank}{}{Worked in the Nerd Herd and helped to solve computer problems. Allowed me to become expert in all forms of martial arts and weaponry.}
 
-\section{PUBLICATIONS}
+\section{发表论文}
 \cvitem{}{\textbf{Zhuohua Li}, Jincheng Wang, Mingshen Sun, and John C.S. Lui. MirChecker: Detecting Bugs in Rust Programs via Static Analysis. In \textit{Proceedings of the 28th ACM Conference on Computer and Communications Security}. CCS '21.}
-\cvitem{}{Jincheng Wang, \textbf{Zhuohua Li}, John C.S. Lui, and Mingshen Sun. Topology-Theoretic Approach To Address Attribute Linkage Attacks In Differential Privacy. \textit{Computers \& Security} (2021): 102552.}
+\cvitem{}{Jincheng Wang, \textbf{Zhuohua Li}, John C.S. Lui, and Mingshen Sun. Topology-Theoretic Approach To Address Attribute Linkage Attacks In Differential Privacy. Computers \& Security (2021): 102552.}
 \cvitem{}{\textbf{Zhuohua Li}, Jincheng Wang, Mingshen Sun, and John C.S. Lui. Securing the Device Drivers of Your Embedded Systems: Framework and Prototype. In \textit{Proceedings of the 3rd International Workshop on Security and Forensics of IoT (in conjunction with ARES 2019)}. IoT-SECFOR '19.}
 
-\section{TEACHING ASSISTANT}
-\cvitem{}{CMSC5735: Advanced Topics in Cloud Computing \hfill \textbf{Spring 2018, CUHK}}
-\cvitem{}{CSCI3320: Fundamentals of Machine Learning \hfill \textbf{Spring 2018, CUHK}}
-\cvitem{}{CSCI2040: Introduction to Python \hfill \textbf{Fall 2017, CUHK}}
+\section{助教}
+\cvitem{}{CMSC5735：高级云计算专题 \hfill \textbf{2018春，香港中文大学}}
+\cvitem{}{CSCI3320：机器学习之基础课程 \hfill \textbf{2018春，香港中文大学}}
+\cvitem{}{CSCI2040：Python程序语言导论 \hfill \textbf{2017秋，香港中文大学}}
 
 %----------------------------------------------------------------------------------------
 %	Projects SECTION
 %----------------------------------------------------------------------------------------
 
-\section{SELECTED PROJECTS}
+\section{项目}
 
-\cventry{Sep.2015--Feb.2016}{Advisor: Assoc. Prof. Yu Zhang}{A Simple C Language Compiler based on LLVM}{USTC}{}
+\cventry{2015年9月--2016年2月}{导师：张煜\ 副教授}{基于LLVM的简易C语言编译器}{中国科学技术大学}{}
 {
 	\begin{itemize}
-		\item A mini C compiler implemented using \emph{Flex}+\emph{Bison}+\emph{LLVM}
-		\item Supports Clang-style informative error messages
-		\item Supports compiling multiprocess programs using  \textit{Message Passing Interface (MPI)}
+		\item 使用\emph{Flex}+\emph{Bison}+\emph{LLVM}实现的简易C语言编译器
+		\item 支持Clang风格的报错信息
+		\item 支持编译基于\textit{Message Passing Interface (MPI)}的并行程序
 	\end{itemize}
 }
 
-\cventry{Mar.2015--Jul.2015}{Advisor: Assoc. Prof. Xi Li}{FPGA Implementation of a MIPS16e Processor}{USTC}{}
+\cventry{2015年3月--2015年7月}{导师：李希\ 副教授}{基于FPGA实现的MIPS16e处理器}{中国科学技术大学}{}
 {
 	\begin{itemize}
-		\item A processor which supports all \emph{MIPS16e} instructions implemented on \emph{Xilinx FPGA} with \emph{Verilog HDL}
-		\item Provides a debug module through \emph{RS-232} which can print debug information on a screen
+    \item 在\emph{Xilinx FPGA}上使用\emph{Verilog HDL}语言实现，支持全部\emph{MIPS16e}指令
+		\item 通过\emph{RS-232}串口实现DEBUG模块，可打印DEBUG信息到屏幕 
 	\end{itemize}
 }
 
-\cventry{Mar.2015--Jun.2015}{Advisor: Assoc. Prof. Kai Xing}{Porting Inferno Operating System to Samsung S3C6410}{USTC}{}
+\cventry{2015年3月--2015年6月}{导师：邢凯\ 副教授}{移植Inferno操作系统至三星S3C6410开发板}{中国科学技术大学}{}
 {
 	\begin{itemize}
-		\item Implemented the bootloader, serial port driver and LCD driver  in both \emph{Plan 9} assembly language and C
+		\item 使用\emph{Plan 9}汇编和C语言实现了启动引导程序（bootloader），串口驱动和显示器LCD驱动
 		%	\item Compiled the OS kernel using the ARM cross compiler and loaded it into the memory according to the memory model of S3C6410
 		%	\item Debugged the code and finished the porting program successfully
 	\end{itemize}
@@ -246,23 +258,23 @@
 %	AWARDS SECTION
 %----------------------------------------------------------------------------------------
 
-\section{HONORS \& AWARDS}
+\section{获奖经历}
 
-\cvitem{}{Second-class Scholarship for Outstanding Student (10\%) for two times \hfill Sep.2015--Sep.2016, \textbf{USTC}}
-\cvitem{}{A-Sponsorship of Talent Class Plan (10\%) for three times \hfill Sep.2014--Sep.2016, \textbf{USTC}}
-\cvitem{}{Excellent Student Cadre (3\%) \hfill Sep.2015, \textbf{USTC}}
-\cvitem{}{Third-class Scholarship for Outstanding Student (15\%) \hfill Sep.2014, \textbf{USTC}}
+\cvitem{}{优秀学生奖学金银奖（前10\%），两次 \hfill 2015--2016, \textbf{中国科学技术大学}}
+\cvitem{}{英才班拔尖计划助学金A类（前10\%），三次 \hfill 2014--2016, \textbf{中国科学技术大学}}
+\cvitem{}{优秀学生干部（前3\%） \hfill 2015, \textbf{中国科学技术大学}}
+\cvitem{}{优秀学生奖学金铜奖（前15\%） \hfill 2014, \textbf{中国科学技术大学}}
 
 
 %----------------------------------------------------------------------------------------
 %	COMPUTER SKILLS SECTION
 %----------------------------------------------------------------------------------------
 
-\section{COMPUTER SKILLS}
+\section{计算机技术}
 
-\cvitemwithcomment{Operating Systems}{Gentoo Linux, macOS}{}
-\cvitemwithcomment{Programming Languages}{Experienced in C/C++, Rust, Python; familiar with OCaml, Haskell}{}
-\cvitemwithcomment{Editors}{Emacs, Vim}{}
+\cvitemwithcomment{操作系统}{Gentoo Linux, macOS}{}
+\cvitemwithcomment{编程语言}{熟悉C/C++, Rust, Python；了解OCaml, Haskell}{}
+\cvitemwithcomment{编辑器}{Emacs, Vim}{}
 
 
 %----------------------------------------------------------------------------------------
@@ -304,5 +316,5 @@
 %%% coding: utf-8
 %%% mode: latex
 %%% TeX-master: t
-%%% TeX-engine: default
+%%% TeX-engine: xetex
 %%% End:
