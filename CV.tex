@@ -1,25 +1,3 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% "ModernCV" CV and Cover Letter
-% LaTeX Template
-% Version 1.3 (29/10/16)
-%
-% This template has been downloaded from:
-% http://www.LaTeXTemplates.com
-%
-% Original author:
-% Xavier Danaux (xdanaux@gmail.com) with modifications by:
-% Vel (vel@latextemplates.com)
-%
-% License:
-% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
-%
-% Important note:
-% This template requires the moderncv.cls and .sty files to be in the same 
-% directory as this .tex file. These files provide the resume style and themes 
-% used for structuring the document.
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 %----------------------------------------------------------------------------------------
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
@@ -34,8 +12,25 @@
 %\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{lmodern}
+% \usepackage{lmodern}
 \usepackage{microtype}
+\usepackage{fontawesome5}
+
+% Customize icon link
+% usage: \iconlink[<icon:fontawesome>][<text>]{<url>}
+\NewDocumentCommand{\iconlink}{ o o m }{
+  \IfNoValueTF{#1}{
+    \let\icon\faLink
+  }{
+    \let\icon#1
+  }
+  \IfNoValueTF{#2}{
+    \hspace{-12pt}\underline{\href{#3}{\icon}}
+  }{
+    \hspace{-12pt}\underline{\href{#3}{\icon\ #2}}
+  }
+  \hspace{-8pt}
+}
 
 %----------------------------------------------------------------------------------------
 %	NAME AND CONTACT INFORMATION SECTION
@@ -64,29 +59,6 @@
 \begin{document}
 
 %----------------------------------------------------------------------------------------
-%	COVER LETTER
-%----------------------------------------------------------------------------------------
-
-% To remove the cover letter, comment out this entire block
-
-%\clearpage
-
-%\recipient{HR Department}{Corporation\\123 Pleasant Lane\\12345 City, State} % Letter recipient
-%\date{\today} % Letter date
-%\opening{Dear Sir or Madam,} % Opening greeting
-%\closing{Sincerely yours,} % Closing phrase
-%\enclosure[Attached]{curriculum vit\ae{}} % List of enclosed documents
-
-%\makelettertitle % Print letter title
-
-%\lipsum[1-2] % Dummy text
-%\lipsum[4] % Dummy text
-
-%\makeletterclosing % Print letter signature
-
-%\newpage
-
-%----------------------------------------------------------------------------------------
 %	CURRICULUM VITAE
 %----------------------------------------------------------------------------------------
 \vspace*{-5mm}
@@ -97,146 +69,100 @@
 %----------------------------------------------------------------------------------------
 \vspace*{-10mm}
 \section{EDUCATION}
-
 \cventry{Aug.2017--Aug.2022}{Ph.D. in Computer Science and Engineering}{The Chinese University of Hong Kong}{Hong Kong}{}{Advanced Networking and System Research Laboratory (ANSRLab)\\ Supervised by Prof. John C.S. Lui}
-%\cventry{Jul.2016--Sep.2016}{Research Intern at Social Computing Group}{Microsoft Research Asia}{Beijing}{}{Mentor: Dr. Xing Xie}  % Arguments not required can be left empty
-%\cventry{Aug.2013--Jun.2017}{B.E. in Computer Science and Technology}{University of Science and Technology of China}{Hefei}{\textit{GPA: 3.73/4.3}}{Hua Xia Talent Program in Computer Science and Technology}
-\cventry{Aug.2013--Jun.2017}{B.E. in Computer Science and Technology}{University of Science and Technology of China}{Hefei}{}{Hua Xia Talent Program in Computer Science and Technology}
-%Thesis Title: Analysis and Mitigation of Ret2art Attack for Android
-%\section{Masters Thesis}
 
-%\cvitem{Title}{\emph{Money Is The Root Of All Evil -- Or Is It?}}
-%\cvitem{Supervisors}{Professor James Smith \& Associate Professor Jane Smith}
-%\cvitem{Description}{This thesis explored the idea that money has been the cause of untold anguish and suffering in the world. I found that it has, in fact, not.}
+\cventry{Aug.2013--Jun.2017}{B.E. in Computer Science and Technology}{University of Science and Technology of China}{Hefei}{}{Hua Xia Talent Program in Computer Science and Technology}
 
 %----------------------------------------------------------------------------------------
 %	WORK EXPERIENCE SECTION
 %----------------------------------------------------------------------------------------
-
 \section{EXPERIENCE}
-
-%\subsection{Vocational}
-% \cventry{Jul.2019--May.2021}{Supervisor: Prof. John C.S. Lui}{Static Analysis for Rust Programs}{CUHK}{}
-% {
-% 	\begin{itemize}
-% 		\item Developed an automated bug detection tool for Rust based on the theory of \textit{Abstract Interpretation}
-% 		\item Performed static analysis on the \textit{Mid-level Intermediate Representation (MIR)} of Rust
-% 		\item Detected several real-world bugs
-% 	\end{itemize}
-% }
-
 \cventry{Jul.2018--Oct.2018}{Supervisor: Dr. Tao  (Lenx) Wei}{Secure Linux Kernel Module Development in Rust}{Baidu X-Lab, USA}{}
 {
-	\begin{itemize}
-		\item Developed a framework for writing Linux kernel modules in the Rust programming language
-		\item Provided infrastructures for safe kernel memory allocation and concurrency management
-	\end{itemize}
+  \cvlistitem{Developed a framework for writing Linux kernel modules in the Rust programming language}
+  \cvlistitem{Provided infrastructures for safe kernel memory allocation and concurrency management}
 }
 
-\cventry{Jul.2016--Sep.2016}{Mentor: Dr. Xing Xie}{Sentiment Analysis of Microsoft's Chatbot XiaoIce}{Microsoft Research Asia, Beijing}{}
+\cventry{Jul.2016--Sep.2016}{Social Computing Group}{Sentiment Analysis of Microsoft's Chatbot XiaoIce}{Microsoft Research Asia, Beijing}{Mentor: Dr. Xing Xie}
 {
-    \begin{itemize}
-    	\item Participated in improving the sentiment recognition of XiaoIce, Microsoft's AI chatbot
-%	\item Wrote a crawler with \emph{C$^\#$} to crawl sentences from Weibo, tagged their emotions according to their emoticons, extracted a training set and generate a classifier
-	\item Optimized the emotion recognition according to the context of XiaoIce's dialogues
-%	\item Proposed to simplify the classification of sentences by actual application scenarios and improved the precision of emotion recognition for Xiao Ice
-	\end{itemize}
+ 	\cvlistitem{Participated in improving the sentiment recognition of XiaoIce, Microsoft's AI chatbot}
+  \cvlistitem{Optimized the emotion recognition according to the context of XiaoIce's dialogues}
 }
 
 \cventry{Jun.2016}{Advisor: Prof. Hong An}{2016 ISC-HPCAC Student Cluster Competition}{Frankfurt, Germany}{}{
-\begin{itemize}
-\item Built an HPC cluster with our team based on \emph{Huawei FusionServer X6800}
-\item Optimized the performance of several benchmarks and applications within 3kW power-dissipation
-%\item Took charge of optimizing \emph{WRF (Weather Research and Forecasting Model)}
-\item Ranked 4\textsuperscript{th} in overall score and 1\textsuperscript{st} in \emph{WRF (Weather Research and Forecasting Model)}
-%\begin{itemize}
-%\item Wrote shell scripts to make the time-consuming compiling and linking done automatically
-%\item Modified the compiling options to be depth optimization of the program
-%\item Analyzed the operational characteristics of \emph{WRF} with \emph{Intel\textsuperscript{\textregistered}\ VTune\texttrademark\ Amplifier}, \emph{Paramon / Paratune} to find the hardware bottleneck and did the corresponding upgrade
-%\item Replaced the \emph{FFT(Fast Fourier Transform)} module with \emph{Intel\textsuperscript{\textregistered}\ Math Kernel Library (MKL)} and tried different \emph{MPI}, \emph{OpenMP} parameters
-%\item Found out the optimal number of processes and threads which led us to win the \textbf{1\textsuperscript{st}} place for \emph{WRF}
-%\end{itemize}
-\end{itemize}
+  \cvlistitem{Built an HPC cluster with our team based on \emph{Huawei FusionServer X6800}}
+  \cvlistitem{Optimized the performance of several benchmarks and applications within 3kW power-dissipation}
+  \cvlistitem{Ranked 4\textsuperscript{th} in overall score and 1\textsuperscript{st} in \emph{WRF (Weather Research and Forecasting Model)}}
 }
 
-
-%\cventry{2012--Present}{1\textsuperscript{st} Year Analyst}{\textsc{Lehman Brothers}}{Los Angeles}{}{Developed spreadsheets for risk analysis on exotic derivatives on a wide array of commodities (ags, oils, precious and base metals), managed blotter and secondary trades on structured notes, liaised with Middle Office, Sales and Structuring for bookkeeping.
-%\newline{}\newline{}
-%Detailed achievements:
-%\begin{itemize}
-%\item Learned how to make amazing coffee
-%\item Finally determined the reason for \textsc{PC LOAD LETTER}:
-%\begin{itemize}
-%\item Paper jam
-%\item Software issues:
-%\begin{itemize}
-%\item Word not sending the correct data to printer
-%\item Windows trying to print in letter format
-%\end{itemize}
-%\item Coffee spilled inside printer
-%\end{itemize}
-%\item Broke the office record for number of kitten pictures in cubicle
-%\end{itemize}}
-
-%------------------------------------------------
-
-%\cventry{2011--2012}{Summer Intern}{\textsc{Lehman Brothers}}{Los Angeles}{}{Rated "truly distinctive" for Analytical Skills and Teamwork.}
-
-%------------------------------------------------
-
-%\subsection{Miscellaneous}
-
-%\cventry{2010--2011}{}{}{}{}{Spent some time finding myself. This was a courageous endeavour that didn't have a job title. It was quite important to my overall development though so I'm adding it to my CV. Also it explains the gap in my otherwise stellar CV.}
-
-%\cventry{2009--2010}{Computer Repair Specialist}{Buy More}{Burbank}{}{Worked in the Nerd Herd and helped to solve computer problems. Allowed me to become expert in all forms of martial arts and weaponry.}
-
+%----------------------------------------------------------------------------------------
+% PUBLICATIONS SECTION
+% ----------------------------------------------------------------------------------------
 \section{PUBLICATIONS}
-\cvlistitem{\textbf{Zhuohua Li}, Jincheng Wang, Mingshen Sun, and John C.S. Lui. Detecting Cross-Language Memory Management Issues in Rust. In \textit{Proceedings of the 27th European Symposium on Research in Computer Security}. ESORICS '22.}
-\cvlistitem{Jincheng Wang, \textbf{Zhuohua Li}, John C.S. Lui, and Mingshen Sun. Zigbee's Network Rejoin Procedure for IoT Systems: Vulnerabilities and Implications. In \textit{Proceedings of the 25th International Symposium on Research in Attacks, Intrusions and Defenses}. RAID '22.}
-\cvlistitem{Jincheng Wang, \textbf{Zhuohua Li}, John C.S. Lui, and Mingshen Sun. Topology-Theoretic Approach To Address Attribute Linkage Attacks In Differential Privacy. \textit{Computers \& Security}, Volume 113, February 2022.}
-\cvlistitem{\textbf{Zhuohua Li}, Jincheng Wang, Mingshen Sun, and John C.S. Lui. MirChecker: Detecting Bugs in Rust Programs via Static Analysis. In \textit{Proceedings of the 28th ACM Conference on Computer and Communications Security}. CCS '21.}
-\cvlistitem{Jincheng Wang, \textbf{Zhuohua Li}, John C.S. Lui, and Mingshen Sun. Topology-Theoretic Approach To Address Attribute Linkage Attacks In Differential Privacy. In \textit{Proceedings of IEEE INFOCOM WKSHPS: BigSecurity 2021: International Workshop on Security and Privacy in Big Data}. BigSecurity '21.}
-\cvlistitem{\textbf{Zhuohua Li}, Jincheng Wang, Mingshen Sun, and John C.S. Lui. Securing the Device Drivers of Your Embedded Systems: Framework and Prototype. In \textit{Proceedings of the 3rd International Workshop on Security and Forensics of IoT (in conjunction with ARES 2019)}. IoT-SECFOR '19.}
+\cvlistitem{\textbf{Zhuohua Li}, Jincheng Wang, Mingshen Sun, and John C.S. Lui. \href{https://doi.org/10.1007/978-3-031-17143-7_33}{Detecting Cross-Language Memory Management Issues in Rust}. In \textit{Proceedings of the 27th European Symposium on Research in Computer Security}. ESORICS '22.}
 
-\section{TEACHING ASSISTANT}
-\cvitem{}{CMSC5735: Advanced Topics in Cloud Computing \hfill \textbf{Spring 2018, CUHK}}
-\cvitem{}{CSCI3320: Fundamentals of Machine Learning \hfill \textbf{Spring 2018, CUHK}}
-\cvitem{}{CSCI2040: Introduction to Python \hfill \textbf{Fall 2017, CUHK}}
+\cvlistitem{Jincheng Wang, \textbf{Zhuohua Li}, John C.S. Lui, and Mingshen Sun. \href{https://doi.org/10.1145/3545948.3545953}{Zigbee's Network Rejoin Procedure for IoT Systems: Vulnerabilities and Implications}. In \textit{Proceedings of the 25th International Symposium on Research in Attacks, Intrusions and Defenses}. RAID '22.}
+
+\cvlistitem{Jincheng Wang, \textbf{Zhuohua Li}, John C.S. Lui, and Mingshen Sun. \href{https://doi.org/10.1016/j.cose.2021.102552}{Topology-Theoretic Approach To Address Attribute Linkage Attacks In Differential Privacy}. \textit{Computers \& Security}, Volume 113, February 2022.}
+
+\cvlistitem{\textbf{Zhuohua Li}, Jincheng Wang, Mingshen Sun, and John C.S. Lui. \href{https://doi.org/10.1145/3460120.3484541}{MirChecker: Detecting Bugs in Rust Programs via Static Analysis}. In \textit{Proceedings of the 28th ACM Conference on Computer and Communications Security}. CCS '21.}
+
+\cvlistitem{Jincheng Wang, \textbf{Zhuohua Li}, John C.S. Lui, and Mingshen Sun. \href{https://doi.org/10.1109/INFOCOMWKSHPS51825.2021.9484499}{Topology-Theoretic Approach To Address Attribute Linkage Attacks In Differential Privacy}. In \textit{Proceedings of IEEE INFOCOM WKSHPS: BigSecurity 2021: International Workshop on Security and Privacy in Big Data}. BigSecurity '21.}
+
+\cvlistitem{\textbf{Zhuohua Li}, Jincheng Wang, Mingshen Sun, and John C.S. Lui. \href{https://doi.org/10.1145/3339252.3340506}{Securing the Device Drivers of Your Embedded Systems: Framework and Prototype}. In \textit{Proceedings of the 3rd International Workshop on Security and Forensics of IoT (in conjunction with ARES 2019)}. IoT-SECFOR '19.}
 
 %----------------------------------------------------------------------------------------
 %	Projects SECTION
 %----------------------------------------------------------------------------------------
-
 \section{SELECTED PROJECTS}
+\cvitemwithcomment{\textsc{FFIChecker} (\faIcon[regular]{star}20)}{A Tool for Detecting Cross-Language Memory Management Issues in Rust}{\iconlink[\faGithub]{https://github.com/lizhuohua/rust-ffi-checker}}
+  \cvlistitem{Detected memory management issues across Rust's \textit{Foreign Function Interface (FFI)}}
+  \cvlistitem{Detected 34 real-world bugs}
 
-\cventry{Sep.2015--Feb.2016}{Advisor: Assoc. Prof. Yu Zhang}{A Simple C Language Compiler based on LLVM}{USTC}{}
-{
-	\begin{itemize}
-		\item A mini C compiler implemented using \emph{Flex}+\emph{Bison}+\emph{LLVM}
-		\item Supports Clang-style informative error messages
-		\item Supports compiling multiprocess programs using  \textit{Message Passing Interface (MPI)}
-	\end{itemize}
-}
+\cvitemwithcomment{\textsc{MirChecker} (\faIcon[regular]{star}96)}{A Static Analysis and Bug Detection Tool for Rust programs}{\iconlink[\faGithub]{https://github.com/lizhuohua/rust-mir-checker}}
+  \cvlistitem{Performed static analysis on the Rust's \textit{Mid-level Intermediate Representation (MIR)} based on the theory of \textit{Abstract Interpretation}}
+  \cvlistitem{Detected 33 real-world runtime panics and memory safety bugs}
 
-\cventry{Mar.2015--Jul.2015}{Advisor: Assoc. Prof. Xi Li}{FPGA Implementation of a MIPS16e Processor}{USTC}{}
-{
-	\begin{itemize}
-		\item A processor which supports all \emph{MIPS16e} instructions implemented on \emph{Xilinx FPGA} with \emph{Verilog HDL}
-		\item Provides a debug module through \emph{RS-232} which can print debug information on a screen
-	\end{itemize}
-}
+\cvitemwithcomment{linux-kernel-module-rust (\faIcon[regular]{star}628)}{A Framework for Secure Kernel Module Development in Rust}{\iconlink[\faGithub]{https://github.com/lizhuohua/linux-kernel-module-rust}}
+  \cvlistitem{A framework for writing Linux kernel modules in the Rust programming language}
+  \cvlistitem{Provided infrastructures for safe kernel memory allocation and concurrency management}
 
-\cventry{Mar.2015--Jun.2015}{Advisor: Assoc. Prof. Kai Xing}{Porting Inferno Operating System to Samsung S3C6410}{USTC}{}
-{
-	\begin{itemize}
-		\item Implemented the bootloader, serial port driver and LCD driver  in both \emph{Plan 9} assembly language and C
-		%	\item Compiled the OS kernel using the ARM cross compiler and loaded it into the memory according to the memory model of S3C6410
-		%	\item Debugged the code and finished the porting program successfully
-	\end{itemize}
-}
+% \cventry{Sep.2015--Feb.2016}{Advisor: Assoc. Prof. Yu Zhang}{A Simple C Language Compiler based on LLVM}{USTC}{}
+% {
+% 	\begin{itemize}
+% 		\item A mini C compiler implemented using \emph{Flex}+\emph{Bison}+\emph{LLVM}
+% 		\item Supports Clang-style informative error messages
+% 		\item Supports compiling multiprocess programs using  \textit{Message Passing Interface (MPI)}
+% 	\end{itemize}
+% }
+
+% \cventry{Mar.2015--Jul.2015}{Advisor: Assoc. Prof. Xi Li}{FPGA Implementation of a MIPS16e Processor}{USTC}{}
+% {
+% 	\begin{itemize}
+% 		\item A processor which supports all \emph{MIPS16e} instructions implemented on \emph{Xilinx FPGA} with \emph{Verilog HDL}
+% 		\item Provides a debug module through \emph{RS-232} which can print debug information on a screen
+% 	\end{itemize}
+% }
+
+% \cventry{Mar.2015--Jun.2015}{Advisor: Assoc. Prof. Kai Xing}{Porting Inferno Operating System to Samsung S3C6410}{USTC}{}
+% {
+% 	\begin{itemize}
+% 		\item Implemented the bootloader, serial port driver and LCD driver  in both \emph{Plan 9} assembly language and C
+% 		%	\item Compiled the OS kernel using the ARM cross compiler and loaded it into the memory according to the memory model of S3C6410
+% 		%	\item Debugged the code and finished the porting program successfully
+% 	\end{itemize}
+% }
 
 %----------------------------------------------------------------------------------------
-%	ACheivements SECTION
+% TEACHING SECTION
+%----------------------------------------------------------------------------------------
+\section{TEACHING ASSISTANT}
+\cvitem{}{CMSC5735: Advanced Topics in Cloud Computing \hfill Spring 2018, \textbf{CUHK}}
+\cvitem{}{CSCI3320: Fundamentals of Machine Learning \hfill Spring 2018, \textbf{CUHK}}
+\cvitem{}{CSCI2040: Introduction to Python \hfill Fall 2017, \textbf{CUHK}}
+
+%----------------------------------------------------------------------------------------
+%	ACHIEVEMENTS SECTION
 %----------------------------------------------------------------------------------------
 
 %\section{EXTRACURRICULAR ACTIVITIES}
@@ -248,25 +174,19 @@
 %----------------------------------------------------------------------------------------
 %	AWARDS SECTION
 %----------------------------------------------------------------------------------------
-
 \section{HONORS \& AWARDS}
-
 \cvitem{}{Second-class Scholarship for Outstanding Student (10\%) for two times \hfill Sep.2015--Sep.2016, \textbf{USTC}}
 \cvitem{}{A-Sponsorship of Talent Class Plan (10\%) for three times \hfill Sep.2014--Sep.2016, \textbf{USTC}}
 \cvitem{}{Excellent Student Cadre (3\%) \hfill Sep.2015, \textbf{USTC}}
 \cvitem{}{Third-class Scholarship for Outstanding Student (15\%) \hfill Sep.2014, \textbf{USTC}}
 
-
 %----------------------------------------------------------------------------------------
 %	COMPUTER SKILLS SECTION
 %----------------------------------------------------------------------------------------
-
 \section{COMPUTER SKILLS}
-
 \cvitemwithcomment{Operating Systems}{Gentoo Linux, macOS}{}
-\cvitemwithcomment{Programming Languages}{Experienced in C/C++, Rust, Python; familiar with OCaml, Haskell}{}
+\cvitemwithcomment{Programming Languages}{Experienced in C/C++, Rust, Python}{}
 \cvitemwithcomment{Editors}{Emacs, Vim}{}
-
 
 %----------------------------------------------------------------------------------------
 %	COMMUNICATION SKILLS SECTION
