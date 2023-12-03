@@ -7,3 +7,4 @@ auto
 *.fls
 *.fdb_latexmk
 *.~undo-tree~
+.auctex-auto/

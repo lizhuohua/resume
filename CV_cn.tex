@@ -80,14 +80,23 @@
 %	EDUCATION SECTION
 %----------------------------------------------------------------------------------------
 \vspace*{-10mm}
-\section{教育}
+\section{教育经历}
 \cventry{2017年8月--2022年8月}{博士，计算机科学与工程学系}{香港中文大学}{香港}{}{网络系统研究实验室（ANSR Lab）\\导师：John C.S. Lui教授}
 \cventry{2013年8月--2017年6月}{学士，计算机科学与技术系}{中国科学技术大学}{合肥}{}{华夏计算机科技英才班}
 
 %----------------------------------------------------------------------------------------
 %	WORK EXPERIENCE SECTION
 %----------------------------------------------------------------------------------------
-\section{经历}
+\section{工作经历}
+\cventry{2023年8月--现在}{导师：John C.S. Lui教授}{香港中文大学\ 博士后研究员}{香港}{}
+{
+  \cvlistitem{研究在线学习和多臂老虎机算法及其应用}
+}
+\cventry{2022年10月--2023年8月}{导师：John C.S. Lui教授}{香港中文大学\ 初级研究助理}{香港}{}
+{
+  \cvlistitem{设计适用于量子网络的边界网关协议 (Border Gateway Protocol, BGP)}
+  \cvlistitem{使用在线学习算法选择高保真度的量子链路并减少测量消耗}
+}
 \cventry{2018年7月--2018年10月}{导师：韦韬\ 博士}{用Rust开发安全的Linux内核模块}{百度X-Lab，美国}{}
 {
   \cvlistitem{开发了用Rust编程语言编写Linux内核模块的基础框架}
@@ -101,22 +110,28 @@
 }
 
 \cventry{2016年6月}{导师：安虹\ 教授}{ISC16国际大学生超级计算机竞赛}{法兰克福，德国}{}{
-  \cvlistitem{基于华为\emph{FusionServer X6800}服务器搭建超算集群}
-  \cvlistitem{在3千瓦功耗限制下优化应用性能}
-  \cvlistitem{获得总分第四名，\emph{WRF (Weather Research and Forecasting Model)}单项第一名}
+  \cvlistitem{基于华为FusionServer X6800服务器搭建超算集群，在3千瓦功耗限制下优化应用性能}
+  \cvlistitem{获得总分第四名，WRF (Weather Research and Forecasting Model)单项第一名}
 }
 
 % ----------------------------------------------------------------------------------------
 % PUBLICATIONS SECTION
 % ----------------------------------------------------------------------------------------
-\section{发表论文}
+\section{发表论文\textnormal{\normalsize (*表示共同第一作者，\#表示通讯作者)}}
+
+\cvlistitem{Maoli Liu, \textbf{Zhuohua Li}\textsuperscript{\#}, Xuchuang Wang, and John C.S. Lui. \textsc{LinkSelFiE}: Link Selection and Fidelity Estimation in Quantum Networks. In \textit{Proceedings of the IEEE Conference on Computer Communications 2024}. INFOCOM '24.}
+
+\cvlistitem{Maoli Liu\textsuperscript{*}, \textbf{Zhuohua Li}\textsuperscript{*\#}, Kechao Cai, Jonathan Allcock, Shengyu Zhang, and John C.S. Lui. Quantum BGP with Online Path Selection via Network Benchmarking. In \textit{Proceedings of the IEEE Conference on Computer Communications 2024}. INFOCOM '24.}
+
+\cvlistitem{Jincheng Wang, \textbf{Zhuohua Li}, Mingshen Sun, Bin Yuan\textsuperscript{\#}, and John C.S. Lui. IoT Anomaly Detection Via Device Interaction Graph. In \textit{Proceedings of the 53rd Annual IEEE/IFIP International Conference on Dependable Systems and Network}. DSN '23.}
+
 \cvlistitem{\textbf{Zhuohua Li}, Jincheng Wang, Mingshen Sun, and John C.S. Lui. \href{https://doi.org/10.1007/978-3-031-17143-7_33}{Detecting Cross-Language Memory Management Issues in Rust}. In \textit{Proceedings of the 27th European Symposium on Research in Computer Security}. ESORICS '22.}
 
 \cvlistitem{Jincheng Wang, \textbf{Zhuohua Li}, John C.S. Lui, and Mingshen Sun. \href{https://doi.org/10.1145/3545948.3545953}{Zigbee's Network Rejoin Procedure for IoT Systems: Vulnerabilities and Implications}. In \textit{Proceedings of the 25th International Symposium on Research in Attacks, Intrusions and Defenses}. RAID '22.}
 
 \cvlistitem{Jincheng Wang, \textbf{Zhuohua Li}, John C.S. Lui, and Mingshen Sun. \href{https://doi.org/10.1016/j.cose.2021.102552}{Topology-Theoretic Approach To Address Attribute Linkage Attacks In Differential Privacy}. \textit{Computers \& Security}, Volume 113, February 2022.}
 
-\cvlistitem{\textbf{Zhuohua Li}, Jincheng Wang, Mingshen Sun, and John C.S. Lui. \href{https://doi.org/10.1145/3460120.3484541}{MirChecker: Detecting Bugs in Rust Programs via Static Analysis}. In \textit{Proceedings of the 28th ACM Conference on Computer and Communications Security}. CCS '21.}
+\cvlistitem{\textbf{Zhuohua Li}, Jincheng Wang, Mingshen Sun, and John C.S. Lui. \href{https://doi.org/10.1145/3460120.3484541}{\textsc{MirChecker}: Detecting Bugs in Rust Programs via Static Analysis}. In \textit{Proceedings of the 28th ACM Conference on Computer and Communications Security}. CCS '21.}
 
 \cvlistitem{Jincheng Wang, \textbf{Zhuohua Li}, John C.S. Lui, and Mingshen Sun. \href{https://doi.org/10.1109/INFOCOMWKSHPS51825.2021.9484499}{Topology-Theoretic Approach To Address Attribute Linkage Attacks In Differential Privacy}. In \textit{Proceedings of IEEE INFOCOM WKSHPS: BigSecurity 2021: International Workshop on Security and Privacy in Big Data}. BigSecurity '21.}
 
@@ -125,16 +140,16 @@
 %----------------------------------------------------------------------------------------
 %	Projects SECTION
 %----------------------------------------------------------------------------------------
-\section{项目}
-\cvitemwithcomment{\textsc{FFIChecker} (\faIcon[regular]{star}20)}{Rust跨语言场景下的内存管理错误检测工具}{\iconlink[\faGithub]{https://github.com/lizhuohua/rust-ffi-checker}}
+\section{项目经历}
+\cvitemwithcomment{\textsc{FFIChecker} (\faIcon[regular]{star}34)}{Rust跨语言场景下的内存管理错误检测工具}{\iconlink[\faGithub]{https://github.com/lizhuohua/rust-ffi-checker}}
   \cvlistitem{检测Rust中由外部函数接口\textit{（Foreign Function Interface）}导致的内存管理错误}
   \cvlistitem{检测到34个现实中的漏洞}
 
-\cvitemwithcomment{\textsc{MirChecker} (\faIcon[regular]{star}96)}{Rust程序的静态分析与错误检测工具}{\iconlink[\faGithub]{https://github.com/lizhuohua/rust-mir-checker}}
+\cvitemwithcomment{\textsc{MirChecker} (\faIcon[regular]{star}109)}{Rust程序的静态分析与错误检测工具}{\iconlink[\faGithub]{https://github.com/lizhuohua/rust-mir-checker}}
   \cvlistitem{基于\textit{抽象释义}对Rust的\textit{中级中间表示}（\textit{Mid-level Intermediate Representation}）进行静态分析}
   \cvlistitem{检测到33个现实中的运行时崩溃（Panic）和内存安全漏洞}
 
-\cvitemwithcomment{linux-kernel-module-rust (\faIcon[regular]{star}628)}{安全的Linux内核模块Rust开发框架}{\iconlink[\faGithub]{https://github.com/lizhuohua/linux-kernel-module-rust}}
+\cvitemwithcomment{linux-kernel-module-rust (\faIcon[regular]{star}630)}{安全的Linux内核模块Rust开发框架}{\iconlink[\faGithub]{https://github.com/lizhuohua/linux-kernel-module-rust}}
   \cvlistitem{开发了用Rust编程语言编写Linux内核模块的基础框架}
   \cvlistitem{提供了安全的内核态内存管理机制和内核锁同步机制}
 
@@ -167,7 +182,7 @@
 %----------------------------------------------------------------------------------------
 % TEACHING SECTION
 %----------------------------------------------------------------------------------------
-\section{助教}
+\section{助教经历}
 \cvitem{}{CMSC5735：高级云计算专题 \hfill 2018春，\textbf{香港中文大学}}
 \cvitem{}{CSCI3320：机器学习之基础课程 \hfill 2018春，\textbf{香港中文大学}}
 \cvitem{}{CSCI2040：Python程序语言导论 \hfill 2017秋，\textbf{香港中文大学}}
